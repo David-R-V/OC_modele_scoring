@@ -23,6 +23,10 @@ serie_index_clients = pd.read_csv('2_backend/API_input_data/Liste_index_clients_
 
 model_risk = joblib.load('2_backend/API_input_data/model_risk_100.joblib')
 
+feat_important_sorted_decroissant=pd.Series(pd.read_csv('2_backend/API_input_data/feat_important_sorted_decroissant.csv',header=None)[0])
+feat_important_sorted_decroissant=feat_important_sorted_decroissant.array
+var_lgbm_100=np.append(feat_important_sorted_decroissant[:100],'TARGET')
+
 # def d'un endpoint "id_client" qui possède la liste de tous les id dans un fichier sans devoir lire la database totale
 @app.get("/id_clients")
 async def get_id_clients():
@@ -106,7 +110,8 @@ async def model_predictif(index_cible: int) -> List[float] :
         selected_line = pd.DataFrame(selected_line.split(separator),
                                      index=pd.read_csv(file_path, sep=separator, compression=compression, nrows=1).columns.to_list()).T.set_index('ID')
         selected_line = selected_line.replace('', np.nan)
-        selected_line = selected_line.drop(['TARGET','INDEX','SK_ID_CURR'],axis=1)
+        selected_line = selected_line[var_lgbm_100]
+        selected_line = selected_line.drop(['TARGET','INDEX'],axis=1)
         selected_line = selected_line.round(3)
 
         # on a techniquement besoin que de la proba de classe 1 : si >0.5, classe 1 = pb de paiement; si <0.5, classe 0
