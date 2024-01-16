@@ -21,7 +21,7 @@ port=int(os.environ.get('PORT', 8000))
 
 serie_index_clients = pd.read_csv('2_backend/API_input_data/Liste_index_clients_futur.csv',index_col='ID')
 
-#model_risk = joblib.load('2_backend/API_input_data/model_risk_100.joblib')
+model_risk = joblib.load('2_backend/API_input_data/model_risk_100.joblib')
 
 # def d'un endpoint "id_client" qui possède la liste de tous les id dans un fichier sans devoir lire la database totale
 @app.get("/id_clients")
@@ -82,7 +82,7 @@ async def get_html_content():
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail="HTML file not found")
 
-Endpoint qui renvoie la proba associée à l'ID sélectionnée
+#Endpoint qui renvoie la proba associée à l'ID sélectionnée
 @app.get("/model_predictif/{index_cible}")
 
 async def model_predictif(index_cible: int) -> List[float] :
@@ -146,7 +146,7 @@ async def explain(index_cible: int):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))   
 
-Endpoint qui génère l'image des features rangées par importance lgbm et renvoie le texte du chemin où elle se trouve
+#Endpoint qui génère l'image des features rangées par importance lgbm et renvoie le texte du chemin où elle se trouve
 @app.get("/explain")
 async def explain():
 
