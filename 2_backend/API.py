@@ -145,8 +145,9 @@ async def explain(index_cible: int):
         #title_text_obj = plt.text(-0.13,0.88, f"ID = {index_cible}", color='blue', fontsize=12, fontweight='bold', transform=fig.transFigure)
         plt.savefig('2_backend/API_input_data/shap_waterfall_plot.jpeg',bbox_inches='tight')
         plt.close()
+
         
-        return "2_backend/API_input_data/shap_waterfall_plot.jpeg"
+        return FileResponse("2_backend/API_input_data/shap_waterfall_plot.jpeg",media_type='image/jpeg')
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))   
@@ -160,7 +161,7 @@ async def explain():
         plt.savefig('2_backend/API_input_data/lgbm_features_plot.jpeg',bbox_inches='tight')
         plt.close()
         
-        return "2_backend/API_input_data/lgbm_features_plot.jpeg"
+        return FileResponse("2_backend/API_input_data/lgbm_features_plot.jpeg",media_type='image/jpeg')
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) 
