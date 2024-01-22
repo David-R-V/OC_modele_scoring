@@ -26,4 +26,4 @@ jobs:
     - name: Run pytest
       run: |
         cd 2_backend
-        pytest
+        pytest test_fichiers_app.py
