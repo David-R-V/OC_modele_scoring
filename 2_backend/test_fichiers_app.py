@@ -9,7 +9,7 @@ import shap
 #######################    Tests sur le fichier 1   #######################
 ###########################################################################
 
-file_path_1='2_backend/API_input_data/Liste_index_clients_futur.csv'
+file_path_1='API_input_data/Liste_index_clients_futur.csv'
 
 exist_1=os.path.exists(file_path_1)
 
@@ -39,7 +39,7 @@ if exist_1==True:
 #######################    Tests sur le fichier 2   #######################
 ###########################################################################
 
-file_path_2='2_backend/API_input_data/base_futur.csv'
+file_path_2='API_input_data/base_futur.csv'
 
 exist_2=os.path.exists(file_path_2)
 
@@ -64,7 +64,7 @@ if exist_2==True:
 #######################    Tests sur le fichier 3   #######################
 ###########################################################################
             
-file_path_3='2_backend/API_input_data/model_risk_100.joblib'
+file_path_3='API_input_data/model_risk_100.joblib'
 
 exist_3=os.path.exists(file_path_3)
 
@@ -84,7 +84,7 @@ if exist_3==True:
 #######################    Tests sur le fichier 4   #######################
 ###########################################################################
         
-file_path_4='2_backend/API_input_data/feat_important_sorted_decroissant.csv'
+file_path_4='API_input_data/feat_important_sorted_decroissant.csv'
 
 exist_4=os.path.exists(file_path_4)
 
@@ -104,7 +104,7 @@ if exist_4==True:
 #######################    Tests sur le fichier 5   #######################
 ###########################################################################
 
-file_path_5='2_backend/API_input_data/report_5.html'
+file_path_5='API_input_data/report_5.html'
 
 exist_5=os.path.exists(file_path_5)
 
@@ -125,7 +125,7 @@ if exist_5==True:
 #######################    Tests sur le fichier 6   #######################
 ###########################################################################
         
-file_path_6='2_backend/API_input_data/base_futur_prep_algo.csv'
+file_path_6='API_input_data/base_futur_prep_algo.csv'
 
 exist_6=os.path.exists(file_path_6)
 
@@ -151,7 +151,7 @@ if exist_6==True:
 #######################    Tests sur le fichier 7   #######################
 ###########################################################################
 
-file_path_7='2_backend/API_input_data/shap_explanation_model_risk_100.joblib'
+file_path_7='API_input_data/shap_explanation_model_risk_100.joblib'
 
 exist_7=os.path.exists(file_path_7)
 
@@ -171,7 +171,7 @@ if exist_7==True:
 #######################    Tests sur le fichier 8   #######################
 ###########################################################################
 
-file_path_8='2_backend/API_input_data/shap_waterfall_plot.jpeg'
+file_path_8='API_input_data/shap_waterfall_plot.jpeg'
 
 exist_8=os.path.exists(file_path_8)
 
@@ -192,7 +192,7 @@ if exist_8==True:
 #######################    Tests sur le fichier 9   #######################
 ###########################################################################
 
-file_path_9='2_backend/API_input_data/lgbm_features_plot.jpeg'
+file_path_9='API_input_data/lgbm_features_plot.jpeg'
 
 exist_9=os.path.exists(file_path_9)
 
