@@ -24,4 +24,5 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run pytest
-      run: .venv\Scripts\pytest.exe
+      run: |
+        pytest
