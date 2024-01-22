@@ -24,5 +24,6 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run pytest
-      run: cd 2_backend
+      run: |
+        cd 2_backend
         pytest
